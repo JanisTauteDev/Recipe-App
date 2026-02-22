@@ -9,21 +9,26 @@ import { RecipeApi, type userProfile } from '../../../core/service/recipe-api';
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './user-profile.html',
   styleUrl: './user-profile.css',
 })
 export class UserProfile {
   user$: Observable<userProfile>;
 
-  constructor(private route: ActivatedRoute, private api: RecipeApi, private location: Location){
+  constructor(
+    private route: ActivatedRoute,
+    private api: RecipeApi,
+    private location: Location,
+  ) {
     this.user$ = this.route.paramMap.pipe(
       map((params) => Number(params.get('id'))),
-      switchMap((id) => this.api.getUserById(id))
+      switchMap((id) => this.api.getUserById(id)),
     );
   }
 
-  goBack(): void{ //Funktion um von UserProfile wieder zum Rezept zu gelangen
+  goBack(): void {
+    //Funktion um von UserProfile wieder zum Rezept zu gelangen
     this.location.back();
   }
 }

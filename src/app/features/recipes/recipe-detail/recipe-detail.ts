@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { RecipeApi } from '../../../core/service/recipe-api';
 import type { RecipeDetail as RecipeDetailModel } from '../../../core/service/recipe-api';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -19,10 +20,15 @@ export class RecipeDetail {
   constructor(
     private route: ActivatedRoute,
     private recipeApi: RecipeApi,
+    private Location: Location,
   ) {
     this.recipe$ = this.route.paramMap.pipe(
       map((params) => Number(params.get('id'))),
       switchMap((id) => this.recipeApi.getRecipeById(id)),
     );
+  }
+
+  goBack(): void {
+    this.Location.back();
   }
 }

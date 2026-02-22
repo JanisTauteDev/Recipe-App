@@ -2,7 +2,34 @@
   <div class="container">
     <h2 class="title">Rezepte</h2>
 
-    <ng-container *ngIf="recipes$ | async as data; else loading">
+    <ng-container *ngIf="data$ | async as data; else loading">
+      <!-- Pagination -->
+      <div class="level mb-4">
+        <div class="level-left">
+          <div class="buttons">
+            <button class="button is-light" (click)="prev(data.skip)" [disabled]="data.skip === 0">
+              ← Zurück
+            </button>
+
+            <button
+              class="button is-light"
+              (click)="next(data.skip, data.total)"
+              [disabled]="data.skip + limit >= data.total"
+            >
+              Weiter →
+            </button>
+          </div>
+        </div>
+
+        <div class="level-right">
+          <p class="has-text-grey">
+            Seite {{ getCurrentPage(data.skip) }} von
+            {{ getTotalPages(data.total) }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Cards -->
       <div class="columns is-multiline">
         <div class="column is-one-quarter" *ngFor="let recipe of data.recipes">
           <a class="card" [routerLink]="['/recipes', recipe.id]">

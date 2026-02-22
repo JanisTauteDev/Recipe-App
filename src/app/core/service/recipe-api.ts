@@ -60,7 +60,7 @@ export class RecipeApi {
     return this.http.get<RecipeDetail>(`${this.baseURL}/recipes/${id}`);
   }
 
-  getUserById(id: number): Observable<userProfile>{
+  getUserById(id: number): Observable<userProfile> {
     return this.http.get<userProfile>(`${this.baseURL}/users/${id}`);
   }
 }

@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <a class="button is-light" routerLink="/recipes">← Zurück zur Rezeptübersicht</a>
+    <a class="button is-light" (click)="goBack()">← Zurück zur Rezeptübersicht</a>
 
     <ng-container *ngIf="recipe$ | async as recipe; else loading">
       <h2 class="title mt-4">{{ recipe.name }}</h2>
@@ -16,7 +16,9 @@
           <div class="box">
             <p><strong>ID:</strong> {{ recipe.id }}</p>
             <p><strong>Autor (userId):</strong> {{ recipe.userId }}</p>
-            <a class="button is-link is-light" [routerLink]="['/users', recipe.userId]"> Autor ansehen</a>
+            <a class="button is-link is-light" [routerLink]="['/users', recipe.userId]">
+              Autor ansehen</a
+            >
             <p><strong>Küche:</strong> {{ recipe.cuisine }}</p>
             <p><strong>Schwierigkeit:</strong> {{ recipe.difficulty }}</p>
             <p><strong>Portionen:</strong> {{ recipe.servings }}</p>
