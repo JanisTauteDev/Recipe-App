@@ -2,20 +2,26 @@
   <div class="container">
     <h2 class="title">Rezepte</h2>
 
-    <div class="columns is-multiline">
-      <div class="column is-one-quarter" *ngFor="let recipe of recipes"> <!--erzeugt pro DUmmyRezept eine card-->
-        <a class="card" [routerLink]="['/recipes', recipe.id]"> <!--routerLink: baut /recipes/id -> kein href-->
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img [src]="recipe.image" [alt]="recipe.name" />
-            </figure>
-          </div>
+    <ng-container *ngIf="recipes$ | async as data; else loading">
+      <div class="columns is-multiline">
+        <div class="column is-one-quarter" *ngFor="let recipe of data.recipes">
+          <a class="card" [routerLink]="['/recipes', recipe.id]">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img [src]="recipe.image" [alt]="recipe.name" />
+              </figure>
+            </div>
 
-          <div class="card-content">
-            <p class="title is-6">{{ recipe.name }}</p>
-          </div>
-        </a>
+            <div class="card-content">
+              <p class="title is-6">{{ recipe.name }}</p>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="notification is-light">Lade Rezepte…</div>
+    </ng-template>
   </div>
 </section>

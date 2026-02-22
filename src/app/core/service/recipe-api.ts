@@ -20,13 +20,13 @@ type RecipeListResponse = {
   providedIn: 'root',
 })
 export class RecipeApi {
-  private baseURL = 'https://dummyjson.com/';
+  private baseURL = 'https://dummyjson.com';
 
   constructor(private http: HttpClient) {}
   
   getRecipes(limit = 30, skip = 0): Observable<RecipeListResponse>{   //API liefert recipes, total, etc. -> Typensicherheit
     return this.http.get<RecipeListResponse>(
-      `${this.baseURL}/recipes?limit=${limit}$skip=${skip}`
+      `${this.baseURL}/recipes?limit=${limit}&skip=${skip}`
     );
   }
 
