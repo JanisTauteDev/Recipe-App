@@ -1,8 +1,50 @@
 <section class="section">
   <div class="container">
-    <a class="button is-light" routerLink="/recipes">← Zurück zur Rezeptübersicht</a> 
+    <a class="button is-light" routerLink="/recipes">← Zurück zur Rezeptübersicht</a>
 
-    <h2 class="title mt-4">Rezept Details</h2>
-    <p class="subtitle">ID aus der URL: <strong>{{ id }}</strong></p>
+    <ng-container *ngIf="recipe$ | async as recipe; else loading">
+      <h2 class="title mt-4">{{ recipe.name }}</h2>
+
+      <div class="columns">
+        <div class="column is-6">
+          <figure class="image is-4by3">
+            <img [src]="recipe.image" [alt]="recipe.name" />
+          </figure>
+        </div>
+
+        <div class="column is-6">
+          <div class="box">
+            <p><strong>ID:</strong> {{ recipe.id }}</p>
+            <p><strong>Autor (userId):</strong> {{ recipe.userId }}</p>
+            <a class="button is-link is-light" [routerLink]="['/users', recipe.userId]"> Autor ansehen</a>
+            <p><strong>Küche:</strong> {{ recipe.cuisine }}</p>
+            <p><strong>Schwierigkeit:</strong> {{ recipe.difficulty }}</p>
+            <p><strong>Portionen:</strong> {{ recipe.servings }}</p>
+            <p><strong>Prep:</strong> {{ recipe.prepTimeMinutes }} min</p>
+            <p><strong>Cook:</strong> {{ recipe.cookTimeMinutes }} min</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column is-6">
+          <h3 class="title is-5">Zutaten</h3>
+          <ul>
+            <li *ngFor="let ing of recipe.ingredients">{{ ing }}</li>
+          </ul>
+        </div>
+
+        <div class="column is-6">
+          <h3 class="title is-5">Anleitung</h3>
+          <ol>
+            <li *ngFor="let step of recipe.instructions">{{ step }}</li>
+          </ol>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="notification is-light mt-4">Lade Rezept…</div>
+    </ng-template>
   </div>
 </section>

@@ -25,7 +25,7 @@ type RecipeListResponse = {
   styleUrl: './recipe-list.css',
 })
 export class RecipeList {
-    // Observable statt Dummy-Daten
+  // Observable statt Dummy-Daten
   recipes$: Observable<RecipeListResponse>;
 
   constructor(private recipeApi: RecipeApi) {

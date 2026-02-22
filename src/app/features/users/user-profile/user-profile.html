@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container">
+    <button class="button is-light mb-4" (click)="goBack()">← Zurück zum Rezept</button>
+
+    <ng-container *ngIf="user$ | async as user; else loading">
+      <h2 class="title mt-4">Profil des Rezeptautors</h2>
+
+      <div class="box">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-96x96">
+              <img [src]="user.image" [alt]="user.firstName + ' ' + user.lastName" />
+            </p>
+          </figure>
+
+          <div class="media-content">
+            <p class="title is-5">
+              {{ user.firstName }} {{ user.lastName }}
+            </p>
+            <p class="subtitle is-6">
+              @{{ user.username }}
+            </p>
+
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>User ID:</strong> {{ user.id }}</p>
+          </div>
+        </article>
+      </div>
+    </ng-container>
+
+    <ng-template #loading>
+      <div class="notification is-light mt-4">Lade Userprofil…</div>
+    </ng-template>
+  </div>
+</section>

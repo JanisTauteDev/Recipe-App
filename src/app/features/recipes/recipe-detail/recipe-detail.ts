@@ -1,18 +1,28 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+import { RecipeApi } from '../../../core/service/recipe-api';
+import type { RecipeDetail as RecipeDetailModel } from '../../../core/service/recipe-api';
 
 @Component({
   selector: 'app-recipe-detail',
+  standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './recipe-detail.html',
   styleUrl: './recipe-detail.css',
 })
 export class RecipeDetail {
-  id: number;
+  recipe$: Observable<RecipeDetailModel>;
 
-  constructor(private route: ActivatedRoute){ //ActivatedRoute -> Zugriff auf die aktuelle Route
-    const idParam = this.route.snapshot.paramMap.get('id'); // snapshot.paramMap.get('id') liest id aus /recipe/id, später: Observable Stream
-    this.id = Number(idParam);  //Number() -> macht aus dem String "7" die Zahl 7
+  constructor(
+    private route: ActivatedRoute,
+    private recipeApi: RecipeApi,
+  ) {
+    this.recipe$ = this.route.paramMap.pipe(
+      map((params) => Number(params.get('id'))),
+      switchMap((id) => this.recipeApi.getRecipeById(id)),
+    );
   }
 }

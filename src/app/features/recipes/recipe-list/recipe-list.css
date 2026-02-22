@@ -1,4 +1,7 @@
-.card{
-    display: block;
-    color: inherit;
+.card {
+  display: block;
+  color: inherit;
+}
+.title {
+  text-align: center;
 }
