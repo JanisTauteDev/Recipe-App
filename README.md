@@ -6,7 +6,7 @@ A small Single Page Application built with Angular 18+ using the DummyJSON REST 
 
 - Angular 18+
 - Standalone Components
-- Coder Formating: Prettier
+- Code Formating: Prettier
 - RxJS & Observables to communicate with REST-API
 - Angular Router
 - TypeScript
