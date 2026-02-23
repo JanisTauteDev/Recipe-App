@@ -1,9 +1,9 @@
 <section class="section">
   <div class="container">
-    <button class="button is-light mb-4" (click)="goBack()">← Zurück zum Rezept</button>
+    <button class="button is-light mb-4" (click)="goBack()">← Back to Recipe</button>
 
     <ng-container *ngIf="user$ | async as user; else loading">
-      <h2 class="title mt-4">Profil des Rezeptautors</h2>
+      <h2 class="title mt-4">Author Profile</h2>
 
       <div class="box">
         <article class="media">
@@ -25,7 +25,7 @@
     </ng-container>
 
     <ng-template #loading>
-      <div class="notification is-light mt-4">Lade Userprofil…</div>
+      <div class="notification is-light mt-4">Loading Userprofile…</div>
     </ng-template>
   </div>
 </section>

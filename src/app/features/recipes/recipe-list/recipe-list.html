@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h2 class="title">Rezepte</h2>
+    <h2 class="title">Recipe App</h2>
 
     <ng-container *ngIf="data$ | async as data; else loading">
       <!-- Pagination -->
@@ -8,7 +8,7 @@
         <div class="level-left">
           <div class="buttons">
             <button class="button is-light" (click)="prev(data.skip)" [disabled]="data.skip === 0">
-              ← Zurück
+              ← Back
             </button>
 
             <button
@@ -16,7 +16,7 @@
               (click)="next(data.skip, data.total)"
               [disabled]="data.skip + limit >= data.total"
             >
-              Weiter →
+              Next →
             </button>
           </div>
         </div>
@@ -48,7 +48,7 @@
     </ng-container>
 
     <ng-template #loading>
-      <div class="notification is-light">Lade Rezepte…</div>
+      <div class="notification is-light">Loading Recipes…</div>
     </ng-template>
   </div>
 </section>
