@@ -1,4 +1,31 @@
-# RecipeApp
+# Recipe App (Angular 18+)
+
+A small Single Page Application built with Angular 18+ using the DummyJSON REST API.
+
+## Tech Stack
+
+- Angular 18+
+- Standalone Components
+- Coder Formating: Prettier
+- RxJS & Observables to communicate with REST-API
+- Angular Router
+- TypeScript
+- Bulma CSS
+
+## Features
+
+- Recipe list with pagination
+- Recipe detail view
+- User profile view
+- History-based navigation
+
+## Installation
+
+```bash
+git clone <repository-url>
+cd <project-folder>
+npm install
+ng serve
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
 
@@ -53,7 +80,3 @@ ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
