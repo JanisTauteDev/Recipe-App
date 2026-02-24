@@ -69,10 +69,12 @@ http://localhost:4200
 This application should run locally without errors.
 
 ## API
+
 Data is fetched from:
 - https://dummyjson.com/recipes
 - https://dummyjson.com/users
 
 ## Possible Improvements
+
 - Caching Layer for images (when the browser isn't in fullscreen)
 - more responsive
