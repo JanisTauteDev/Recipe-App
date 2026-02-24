@@ -91,3 +91,4 @@ Data is fetched from:
 - Markdown Menu for Language Support
 - Rating System for Recipes
 - fix: ensure consistent card sizing on recipe list when not in fullscreen
+- Switching between recipe details directly
