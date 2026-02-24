@@ -28,19 +28,35 @@
         </div>
       </div>
 
-      <div class="columns">
+      <div class="columns mt-4">
+        <!-- Zutaten -->
         <div class="column is-6">
-          <h3 class="title is-5">Ingredients</h3>
-          <ul>
-            <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
-          </ul>
+          <div class="box">
+            <h3 class="title is-5 mb-3">Ingredients</h3>
+
+            <div class="content">
+              <ul>
+                <li *ngFor="let ing of recipe.ingredients">
+                  {{ ing }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
 
+        <!-- Anleitung -->
         <div class="column is-6">
-          <h3 class="title is-5">Instructions</h3>
-          <ol>
-            <li *ngFor="let step of recipe.instructions">{{ step }}</li>
-          </ol>
+          <div class="box">
+            <h3 class="title is-5 mb-3">Instructions</h3>
+
+            <div class="content">
+              <ol>
+                <li *ngFor="let step of recipe.instructions">
+                  {{ step }}
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
     </ng-container>
