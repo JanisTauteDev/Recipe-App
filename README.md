@@ -1,76 +1,77 @@
-# Recipe App (Angular 18+)
+## Recipe App (Angular 18+)
 
 A small Single Page Application built with Angular 18+ using the DummyJSON REST API.
+
+The application demonstrates modern Angular architecture with standalone components, RxJS Observables, routing, pagination via query parameters, and clean separation of concerns.
+
+---
 
 ## Tech Stack
 
 - Angular 18+
-- Standalone Components
-- Code Formating: Prettier
-- RxJS & Observables to communicate with REST-API
+- Standalone Components (no NgModules)
+- RxJS (Observables)
 - Angular Router
+- Angular HttpClient
 - TypeScript
 - Bulma CSS
+- DummyJSON REST API
+
+---
 
 ## Features
 
-- Recipe list with pagination
+- Recipe list with server-side pagination
+- Pagination state persisted via query parameters (`?skip=`)
 - Recipe detail view
 - User profile view
-- History-based navigation
+- History-based navigation (Location API)
+- aync pipe used
 
-## Installation
+---
+
+## Requirements
+
+Make sure you have installed:
+
+- Node.js (v18 or newer recommended)
+- npm (comes with Node)
+- Angular CLI (v18+)
+
+Check versions:
 
 ```bash
-git clone <repository-url>
-cd <project-folder>
+node -v
+npm -v
+ng version
+```
+If Angular CLI is not installed:
+
+```bash
+npm install -g @angular/cli
+```
+Navigate into the project folder:
+
+```bash
+cd recipe-app
+```
+Install dependencies:
+
+```bash
 npm install
+```
+Start the deployment server:
+
+```bash
 ng serve
 ```
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+Open your browser:
 
-## Development server
+[text](http://localhost:4200)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This application should run locally without errors
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## API
+Data is fetched from:
+- [text](https://dummyjson.com/recipes)
+- [text](https://dummyjson.com/users)
