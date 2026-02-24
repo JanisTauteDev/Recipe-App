@@ -62,11 +62,11 @@ Start the deployment server:
 ```bash
 ng serve
 ```
-Open your browser:
+Open link in your browser:
 
 http://localhost:4200
 
-This application should run locally without errors
+This application should run locally without errors.
 
 ## API
 Data is fetched from:
