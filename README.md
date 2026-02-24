@@ -72,7 +72,7 @@ And start the deployment Server with:
 ng serve
 ```
 
-now open the link that gets displayed in the terminal after npm start or ng serve with your browser:
+now open the link that gets displayed in the terminal after npm start or ng serve in your browser:
 
 http://localhost:4200
 
