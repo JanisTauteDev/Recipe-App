@@ -35,18 +35,18 @@ export class RecipeList {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private recipeApi: RecipeApi
+    private recipeApi: RecipeApi,
   ) {
     this.skip$ = this.route.queryParamMap.pipe(
       map((params) => Number(params.get('skip') ?? 0)),
       map((skip) => (Number.isFinite(skip) ? skip : 0)),
       map((skip) => Math.max(0, skip)),
-      distinctUntilChanged()
+      distinctUntilChanged(),
     );
 
     this.data$ = this.skip$.pipe(
       switchMap((skip) => this.recipeApi.getRecipes(this.limit, skip)),
-      shareReplay(1)
+      shareReplay(1),
     );
   }
 
