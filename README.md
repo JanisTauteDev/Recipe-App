@@ -66,7 +66,7 @@ npm install -g @angular/cli
 ng version
 ```
 
-And start the deployment Server with:
+If Angular ClI is installed globally start the deployment Server with:
 
 ```bash
 ng serve
