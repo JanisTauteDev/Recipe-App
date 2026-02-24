@@ -34,7 +34,6 @@ Check versions:
 ```bash
 node -v
 npm -v
-ng version
 ```
 
 Clone the repository:
@@ -60,10 +59,11 @@ Start the deployment server (**recommended**):
 npm start
 ```
 
-Alternatively: install Angular CLI globally:
+Alternatively: install Angular CLI globally and check version:
 
 ```bash
 npm install -g @angular/cli
+ng version
 ```
 
 And start the deployment Server with:
