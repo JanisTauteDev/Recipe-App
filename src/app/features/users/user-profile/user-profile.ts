@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { Location } from '@angular/common';
 
-import { RecipeApi, type userProfile } from '../../../core/service/recipe-api';
+import { RecipeApi, type userProfile } from '../../../core/api/recipe-api';
 @Component({
   selector: 'app-user-profile',
   standalone: true,

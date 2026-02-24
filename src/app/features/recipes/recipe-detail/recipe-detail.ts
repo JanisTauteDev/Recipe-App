@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import { RecipeApi } from '../../../core/service/recipe-api';
-import type { RecipeDetail as RecipeDetailModel } from '../../../core/service/recipe-api';
+import { RecipeApi } from '../../../core/api/recipe-api';
+import type { RecipeDetail as RecipeDetailModel } from '../../../core/api/recipe-api';
 import { Location } from '@angular/common';
 
 @Component({

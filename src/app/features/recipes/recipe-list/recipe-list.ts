@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, switchMap, distinctUntilChanged, shareReplay } from 'rxjs/operators';
 
-import { RecipeApi } from '../../../core/service/recipe-api';
+import { RecipeApi } from '../../../core/api/recipe-api';
 
 type RecipeListItem = {
   id: number;
