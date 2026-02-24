@@ -4,8 +4,6 @@ A small Single Page Application built with Angular 18+ using the DummyJSON REST 
 
 The application demonstrates modern Angular architecture with standalone components, RxJS Observables, routing, pagination via query parameters, and clean separation of concerns.
 
----
-
 ## Tech Stack
 
 - Angular 18+
@@ -17,8 +15,6 @@ The application demonstrates modern Angular architecture with standalone compone
 - Bulma CSS
 - DummyJSON REST API
 
----
-
 ## Features
 
 - Recipe list with server-side pagination
@@ -27,8 +23,6 @@ The application demonstrates modern Angular architecture with standalone compone
 - User profile view
 - History-based navigation (Location API)
 - aync pipe used
-
----
 
 ## Requirements
 
@@ -67,11 +61,11 @@ ng serve
 ```
 Open your browser:
 
-[text](http://localhost:4200)
+[http://localhost:4200]
 
 This application should run locally without errors
 
 ## API
 Data is fetched from:
-- [text](https://dummyjson.com/recipes)
-- [text](https://dummyjson.com/users)
+- [https://dummyjson.com/recipes]
+- [https://dummyjson.com/users]
