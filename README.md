@@ -62,6 +62,13 @@ Start the deployment server:
 ```bash
 ng serve
 ```
+
+Alternatively start the deployment server via npm:
+
+```bash
+npm start
+```
+
 Open link in your browser:
 
 http://localhost:4200
