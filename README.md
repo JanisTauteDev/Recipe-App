@@ -34,21 +34,29 @@ node -v
 npm -v
 ng version
 ```
-If Angular CLI is not installed:
 
-```bash
-npm install -g @angular/cli
-```
-Navigate into the project folder:
-
-```bash
-cd recipe-app
-```
-Install dependencies:
+Install npm dependencies:
 
 ```bash
 npm install
 ```
+
+If Angular CLI is not installed:
+
+```bash
+npm install @angular/cli
+```
+
+Clone the repository:
+```bash
+git clone https://github.com/JanisTauteDev/Recipe-App
+```
+Navigate into the project folder (if needed):
+
+```bash
+cd recipe-app
+```
+
 Start the deployment server:
 
 ```bash
@@ -64,3 +72,7 @@ This application should run locally without errors
 Data is fetched from:
 - https://dummyjson.com/recipes
 - https://dummyjson.com/users
+
+## Possible Improvements
+- Caching Layer for images (when the browser isn't in fullscreen)
+- more responsive
