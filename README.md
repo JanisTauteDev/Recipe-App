@@ -27,6 +27,8 @@ Make sure you have installed:
 - npm (comes with Node)
 - Angular CLI (v18+)
 
+## Installation
+
 Check versions:
 
 ```bash
@@ -35,41 +37,42 @@ npm -v
 ng version
 ```
 
-Install npm dependencies:
-
-```bash
-npm install
-```
-
-If Angular CLI is not installed:
-
-```bash
-npm install @angular/cli
-```
-
 Clone the repository:
 ```bash
 git clone https://github.com/JanisTauteDev/Recipe-App
 ```
+
 Navigate into the project folder (if needed):
 
 ```bash
 cd recipe-app
 ```
 
-Start the deployment server:
+Install npm dependencies:
 
 ```bash
-ng serve
+npm install
 ```
 
-Alternatively start the deployment server via npm:
+Start the deployment server (**recommended**):
 
 ```bash
 npm start
 ```
 
-Open link in your browser:
+Alternatively: install Angular CLI globally:
+
+```bash
+npm install -g @angular/cli
+```
+
+And start the deployment Server with:
+
+```bash
+ng serve
+```
+
+now open the link that gets displayed in the terminal after npm start:
 
 http://localhost:4200
 
@@ -83,5 +86,8 @@ Data is fetched from:
 
 ## Possible Improvements
 
-- Caching Layer for images (when the browser isn't in fullscreen)
-- more responsive
+- Improve/evaluate caching
+- More responsive/interactive
+- Markdown Menu for Language Support
+- Rating System for Recipes
+- fix: ensure consistent card sizing on recipe list when not in fullscreen
