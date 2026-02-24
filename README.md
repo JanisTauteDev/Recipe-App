@@ -16,14 +16,14 @@ A small Single Page Application built with Angular 18+ using the DummyJSON REST 
 - Recipe list with pagination
 - Recipe detail view
 - User profile view
-- History-based navigation (Location API)
+- History-based navigation
 - aync pipe used
 
 ## Requirements
 
 Make sure you have installed:
 
-- Node.js (v18 or newer recommended)
+- Node.js (latest LTS version recommended)
 - npm (comes with Node)
 - Angular CLI (v18+)
 
@@ -72,7 +72,7 @@ And start the deployment Server with:
 ng serve
 ```
 
-now open the link that gets displayed in the terminal after npm start:
+now open the link that gets displayed in the terminal after npm start or ng serve:
 
 http://localhost:4200
 
