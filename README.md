@@ -59,7 +59,7 @@ Start the deployment server (**recommended**):
 npm start
 ```
 
-Alternatively: install Angular CLI globally and check version:
+Alternative: install Angular CLI globally and check version:
 
 ```bash
 npm install -g @angular/cli
