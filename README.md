@@ -2,23 +2,18 @@
 
 A small Single Page Application built with Angular 18+ using the DummyJSON REST API.
 
-The application demonstrates modern Angular architecture with standalone components, RxJS Observables, routing, pagination via query parameters, and clean separation of concerns.
-
 ## Tech Stack
 
 - Angular 18+
 - Standalone Components (no NgModules)
-- RxJS (Observables)
+- RxJS & Observables
 - Angular Router
-- Angular HttpClient
 - TypeScript
 - Bulma CSS
-- DummyJSON REST API
 
 ## Features
 
-- Recipe list with server-side pagination
-- Pagination state persisted via query parameters (`?skip=`)
+- Recipe list with pagination
 - Recipe detail view
 - User profile view
 - History-based navigation (Location API)
@@ -61,11 +56,11 @@ ng serve
 ```
 Open your browser:
 
-[http://localhost:4200]
+http://localhost:4200
 
 This application should run locally without errors
 
 ## API
 Data is fetched from:
-- [https://dummyjson.com/recipes]
-- [https://dummyjson.com/users]
+- https://dummyjson.com/recipes
+- https://dummyjson.com/users
