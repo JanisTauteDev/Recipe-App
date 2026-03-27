@@ -2,7 +2,7 @@
   <div class="container">
     <button class="button is-light mb-4" (click)="goBack()">← Back to Recipe</button>
 
-    <ng-container *ngIf="user$ | async as user; else loading">
+    @if (user$ | async; as user) {
       <h2 class="title mt-4">Author Profile</h2>
 
       <div class="box">
@@ -22,10 +22,8 @@
           </div>
         </article>
       </div>
-    </ng-container>
-
-    <ng-template #loading>
+    } @else {
       <div class="notification is-light mt-4">Loading Userprofile…</div>
-    </ng-template>
+    }
   </div>
 </section>

@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-type RecipeListItem = {
+interface RecipeListItem {
   id: number;
   name: string;
   image: string;
   userId: number;
-};
+}
 
-type RecipeListResponse = {
+interface RecipeListResponse {
   recipes: RecipeListItem[];
   total: number;
   skip: number;
   limit: number;
-};
+}
 
-export type RecipeDetail = {
+export interface RecipeDetail {
   id: number;
   name: string;
   image: string;
@@ -33,16 +33,16 @@ export type RecipeDetail = {
   rating: number;
   reviewCount: number;
   mealType: string[];
-};
+}
 
-export type userProfile = {
+export interface userProfile {
   id: number;
   firstName: string;
   lastName: string;
   image: string;
   email: string;
   username: string;
-};
+}
 
 @Injectable({
   providedIn: 'root',

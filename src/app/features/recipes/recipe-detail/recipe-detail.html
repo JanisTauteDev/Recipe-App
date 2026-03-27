@@ -2,7 +2,7 @@
   <div class="container">
     <a class="button is-light" (click)="goBack()">← Back to Recipe List</a>
 
-    <ng-container *ngIf="recipe$ | async as recipe; else loading">
+    @if (recipe$ | async; as recipe) {
       <h2 class="title mt-4">{{ recipe.name }}</h2>
 
       <div class="columns">
@@ -36,9 +36,9 @@
 
             <div class="content">
               <ul>
-                <li *ngFor="let ing of recipe.ingredients">
-                  {{ ing }}
-                </li>
+                @for (ing of recipe.ingredients; track ing) {
+                  <li>{{ ing }}</li>
+                }
               </ul>
             </div>
           </div>
@@ -51,18 +51,16 @@
 
             <div class="content">
               <ol>
-                <li *ngFor="let step of recipe.instructions">
-                  {{ step }}
-                </li>
+                @for (step of recipe.instructions; track step) {
+                  <li>{{ step }}</li>
+                }
               </ol>
             </div>
           </div>
         </div>
       </div>
-    </ng-container>
-
-    <ng-template #loading>
+    } @else {
       <div class="notification is-light mt-4">Loading Recipe...</div>
-    </ng-template>
+    }
   </div>
 </section>

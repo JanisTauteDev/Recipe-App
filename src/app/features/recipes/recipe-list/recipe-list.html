@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="title">Recipe App</h2>
 
-    <ng-container *ngIf="data$ | async as data; else loading">
+    @if (data$ | async; as data) {
       <!-- Pagination -->
       <div class="level mb-4">
         <div class="level-left">
@@ -31,24 +31,24 @@
 
       <!-- Cards -->
       <div class="columns is-multiline">
-        <div class="column is-one-quarter" *ngFor="let recipe of data.recipes">
-          <a class="card" [routerLink]="['/recipes', recipe.id]">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img [src]="recipe.image" [alt]="recipe.name" />
-              </figure>
-            </div>
+        @for (recipe of data.recipes; track recipe.id) {
+          <div class="column is-one-quarter">
+            <a class="card" [routerLink]="['/recipes', recipe.id]">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img [src]="recipe.image" [alt]="recipe.name" />
+                </figure>
+              </div>
 
-            <div class="card-content">
-              <p class="title is-6">{{ recipe.name }}</p>
-            </div>
-          </a>
-        </div>
+              <div class="card-content">
+                <p class="title is-6">{{ recipe.name }}</p>
+              </div>
+            </a>
+          </div>
+        }
       </div>
-    </ng-container>
-
-    <ng-template #loading>
+    } @else {
       <div class="notification is-light">Loading Recipes…</div>
-    </ng-template>
+    }
   </div>
 </section>

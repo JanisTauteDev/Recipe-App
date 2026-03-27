@@ -6,13 +6,13 @@ import { map, switchMap, distinctUntilChanged, shareReplay } from 'rxjs/operator
 
 import { RecipeApi } from '../../../core/api/recipe-api';
 
-type RecipeListItem = {
+interface RecipeListItem {
   id: number;
   name: string;
   image: string;
 };
 
-type RecipeListResponse = {
+interface RecipeListResponse {
   recipes: RecipeListItem[];
   total: number;
   skip: number;
